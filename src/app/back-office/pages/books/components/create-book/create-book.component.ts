@@ -18,7 +18,12 @@ import { Author } from '../../../../../shared/models/author.model';
   selector: 'app-create-book',
   templateUrl: './create-book.component.html',
   styleUrls: ['./create-book.component.scss'],
-  imports: [IonicModule, ReactiveFormsModule, KeyValuePipe, AsyncPipe],
+  imports: [
+    IonicModule,
+    ReactiveFormsModule,
+    KeyValuePipe,
+    AsyncPipe,
+  ],
 })
 export class CreateBookComponent implements OnInit, OnDestroy {
   form!: FormGroup;
@@ -65,9 +70,12 @@ export class CreateBookComponent implements OnInit, OnDestroy {
   }
 
   save() {
-    if(this.form.invalid) {
+    if (this.form.invalid) {
       this.form.markAllAsTouched();
-      return
+      Object.values(this.form.controls).forEach((control) =>
+        control.markAsDirty(),
+      );
+      return;
     }
     return this.modalCtrl.dismiss(this.form.value, 'save');
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { book } from 'ionicons/icons';
 import { BooksService } from '../../services/books.service';
-import { AsyncPipe, JsonPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { BookItemComponent } from '../book-item/book-item.component';
 import { LoadingState } from '../../../../../shared/models/loading.model';
@@ -11,7 +11,7 @@ import { LoadingState } from '../../../../../shared/models/loading.model';
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.scss'],
-  imports: [AsyncPipe, IonicModule, BookItemComponent, JsonPipe],
+  imports: [AsyncPipe, IonicModule, BookItemComponent],
 })
 export class BookListComponent implements OnInit {
   loadingStateEnum = LoadingState;

@@ -18,20 +18,34 @@
           label="Название"
           labelPlacement="floating"
         ></ion-input>
+        @if (form.get('name')!.invalid && form.get('name')!.dirty) {
+          <div class="ion-padding-bottom">
+            <ion-note color="danger">Поле обязательно для заполнения</ion-note>
+          </div>
+        }
       </ion-item>
       <ion-item class="ion-no-padding">
-        <ion-select
-          formControlName="author"
-          label="Автор"
-          label-placement="floating"
-          [multiple]="true"
-        >
-          @for (author of authors$ | async; track author.id) {
-            <ion-select-option [value]="author.id">{{
-              author.name
-            }}</ion-select-option>
+        <div>
+          <ion-select
+            formControlName="author"
+            label="Автор"
+            label-placement="floating"
+            [multiple]="true"
+          >
+            @for (author of authors$ | async; track author.id) {
+              <ion-select-option [value]="author.id">{{
+                author.name
+              }}</ion-select-option>
+            }
+          </ion-select>
+          @if (form.get('author')!.invalid && form.get('author')!.dirty) {
+            <div class="ion-padding-bottom">
+              <ion-note color="danger"
+                >Поле обязательно для заполнения</ion-note
+              >
+            </div>
           }
-        </ion-select>
+        </div>
       </ion-item>
       <ion-item class="ion-no-padding">
         <ion-textarea
@@ -39,6 +53,23 @@
           label="Описание"
           labelPlacement="floating"
         ></ion-textarea>
+        @if (
+          form.get('description')!.invalid && form.get('description')!.dirty
+        ) {
+          <div class="ion-padding-bottom">
+            <ion-note color="danger">
+              @if (form.get('description')!.errors!['minlength']) {
+                Минимальная длина поля
+                {{
+                  form.get('description')!.errors!['minlength']!.requiredLength
+                }}
+                символов
+              } @else {
+                Поле обязательно для заполнения
+              }
+            </ion-note>
+          </div>
+        }
       </ion-item>
       <ion-item class="ion-no-padding">
         <ion-input
@@ -46,39 +77,63 @@
           label="Число страниц"
           labelPlacement="floating"
         ></ion-input>
+        @if (form.get('pages')!.invalid && form.get('pages')!.dirty) {
+          <div class="ion-padding-bottom">
+            <ion-note color="danger">Поле обязательно для заполнения</ion-note>
+          </div>
+        }
       </ion-item>
       <ion-item class="ion-no-padding">
-        <ion-select
-          formControlName="language"
-          label="Язык"
-          label-placement="floating"
-        >
-          @for (
-            item of dictionaries.LANGUAGE_DICTIONARY | keyvalue;
-            track item.key
-          ) {
-            <ion-select-option [value]="item.key">{{
-              item.value
-            }}</ion-select-option>
+        <div>
+          <ion-select
+            formControlName="language"
+            label="Язык"
+            label-placement="floating"
+          >
+            @for (
+              item of dictionaries.LANGUAGE_DICTIONARY | keyvalue;
+              track item.key
+            ) {
+              <ion-select-option [value]="item.key">{{
+                item.value
+              }}</ion-select-option>
+            }
+          </ion-select>
+          @if (form.get('language')!.invalid && form.get('language')!.dirty) {
+            <div class="ion-padding-bottom">
+              <ion-note color="danger"
+                >Поле обязательно для заполнения</ion-note
+              >
+            </div>
           }
-        </ion-select>
+        </div>
       </ion-item>
       <ion-item class="ion-no-padding">
-        <ion-select
-          formControlName="genre"
-          label="Жанр"
-          label-placement="floating"
-          [multiple]="true"
-        >
-          @for (
-            item of dictionaries.GENRE_DICTIONARY | keyvalue;
-            track item.key
-          ) {
-            <ion-select-option [value]="item.key">{{
-              item.value
-            }}</ion-select-option>
+        <div>
+          <ion-select
+            formControlName="genre"
+            label="Жанр"
+            label-placement="floating"
+            [multiple]="true"
+          >
+            @for (
+              item of dictionaries.GENRE_DICTIONARY | keyvalue;
+              track item.key
+            ) {
+              <ion-select-option [value]="item.key">{{
+                item.value
+              }}</ion-select-option>
+            }
+          </ion-select>
+
+          @if (form.get('genre')!.invalid && form.get('genre')!.dirty) {
+            <div class="ion-padding-bottom">
+              <ion-note color="danger"
+                >Поле обязательно для заполнения</ion-note
+              >
+            </div>
           }
-        </ion-select>
+        </div>
       </ion-item>
     </ion-list>
   </form>
