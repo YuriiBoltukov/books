@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Создание новой книги</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="save()" [strong]="true">Save</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-list class="ion-padding-start">
+      <ion-item class="ion-no-padding">
+        <ion-input
+          formControlName="name"
+          label="Название"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <ion-select
+          formControlName="author"
+          label="Автор"
+          label-placement="floating"
+          [multiple]="true"
+        >
+          @for (author of authors$ | async; track author.id) {
+            <ion-select-option [value]="author.id">{{
+              author.name
+            }}</ion-select-option>
+          }
+        </ion-select>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <ion-textarea
+          formControlName="description"
+          label="Описание"
+          labelPlacement="floating"
+        ></ion-textarea>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <ion-input
+          formControlName="pages"
+          label="Число страниц"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <ion-select
+          formControlName="language"
+          label="Язык"
+          label-placement="floating"
+        >
+          @for (
+            item of dictionaries.LANGUAGE_DICTIONARY | keyvalue;
+            track item.key
+          ) {
+            <ion-select-option [value]="item.key">{{
+              item.value
+            }}</ion-select-option>
+          }
+        </ion-select>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <ion-select
+          formControlName="genre"
+          label="Жанр"
+          label-placement="floating"
+          [multiple]="true"
+        >
+          @for (
+            item of dictionaries.GENRE_DICTIONARY | keyvalue;
+            track item.key
+          ) {
+            <ion-select-option [value]="item.key">{{
+              item.value
+            }}</ion-select-option>
+          }
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
