@@ -14,6 +14,9 @@ const routes: Routes = [
       },
       {
         path: 'books',
+        data: {
+          title: 'Книги',
+        },
         loadComponent: () =>
           import('./pages/book-list/book-list.component').then(
             (m) => m.BookListComponent,
@@ -21,6 +24,9 @@ const routes: Routes = [
       },
       {
         path: 'authors',
+        data: {
+          title: 'Авторы',
+        },
         loadComponent: () =>
           import('./pages/author-list/author-list.component').then(
             (m) => m.AuthorListComponent,
