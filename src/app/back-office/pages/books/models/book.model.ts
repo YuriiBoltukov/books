@@ -5,5 +5,5 @@ export interface Book {
   authors: string[];
   pages: number;
   language: string;
-  genre: BookGenre[];
+  genres: BookGenre[];
 }

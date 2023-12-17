@@ -13,7 +13,7 @@ export enum BookGenre {
   Young = 'Young',
   Adult = 'Adult',
   Thriller = 'Thriller',
-  SelfHelp = 'Self-Help',
+  SelfHelp = 'SelfHelp',
   Business = 'Business',
   Science = 'Science',
   Travel = 'Travel',

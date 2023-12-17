@@ -1,13 +1,21 @@
 <ion-item button detail="true" detail-icon="caret-forward-outline">
   <div class="ion-padding-vertical">
     <ion-label class="ion-padding-bottom">
-      <ion-text>{{ book.title }}</ion-text>
+      <ion-text>{{ book.title || 'Без названия' }}</ion-text>
     </ion-label>
     <ion-note color="medium">
-      <p>Автор: {{ book.authors | arrayToString }}</p>
-      <p>Страниц: {{ book.pages }}</p>
-      <p>Язык: {{ book.language }}</p>
-      <p>Жанр: {{ book.genre | arrayToString }}</p>
+      @if (book.authors.length) {
+        <p>Автор: {{ book.authors | arrayToString }}</p>
+      }
+      @if (book.pages) {
+        <p>Страниц: {{ book.pages }}</p>
+      }
+      @if (book.language) {
+        <p>Язык: {{ book.language }}</p>
+      }
+      @if (book.genres.length) {
+        <p>Жанр: {{ book.genres | translate: dictionary | arrayToString }}</p>
+      }
     </ion-note>
   </div>
 </ion-item>
