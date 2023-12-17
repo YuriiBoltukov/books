@@ -1,0 +1,13 @@
+<ion-item button detail="true" detail-icon="caret-forward-outline">
+  <div class="ion-padding-vertical">
+    <ion-label class="ion-padding-bottom">
+      <ion-text>{{ book.title }}</ion-text>
+    </ion-label>
+    <ion-note color="medium">
+      <p>Автор: {{ book.authors | arrayToString }}</p>
+      <p>Страниц: {{ book.pages }}</p>
+      <p>Язык: {{ book.language }}</p>
+      <p>Жанр: {{ book.genre | arrayToString }}</p>
+    </ion-note>
+  </div>
+</ion-item>

@@ -18,9 +18,7 @@ const routes: Routes = [
           title: 'Книги',
         },
         loadComponent: () =>
-          import('./pages/book-list/book-list.component').then(
-            (m) => m.BookListComponent,
-          ),
+          import('./pages/books/books.component').then((m) => m.BooksComponent),
       },
       {
         path: 'authors',

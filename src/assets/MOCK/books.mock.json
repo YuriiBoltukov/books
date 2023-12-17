@@ -1,0 +1,107 @@
+[
+  {
+    "title": "Книга 1",
+    "authors": ["Автор 1"],
+    "pages": 100,
+    "language": "Русский",
+    "genre": ["Fiction"]
+  },
+  {
+    "title": "Книга 2",
+    "authors": ["Автор 2", "Автор 3"],
+    "pages": 150,
+    "language": "Русский",
+    "genre": ["Mystery"]
+  },
+  {
+    "title": "Книга 3",
+    "authors": ["Автор 4"],
+    "pages": 200,
+    "language": "Русский",
+    "genre": ["Fantasy", "ScienceFiction"]
+  },
+  {
+    "title": "Книга 4",
+    "authors": [],
+    "pages": 120,
+    "language": "Русский",
+    "genre": []
+  },
+  {
+    "title": "Книга 5",
+    "authors": ["Автор 5", "Автор 6"],
+    "pages": 180,
+    "language": "Английский",
+    "genre": ["Romance"]
+  },
+  {
+    "title": "Книга 6",
+    "authors": ["Автор 7"],
+    "pages": null,
+    "language": "Русский",
+    "genre": ["Horror"]
+  },
+  {
+    "title": "Книга 7",
+    "authors": ["Автор 8"],
+    "pages": 250,
+    "language": "Русский",
+    "genre": ["NonFiction"]
+  },
+  {
+    "title": "Книга 8",
+    "authors": ["Автор 8"],
+    "pages": 0,
+    "language": "Русский",
+    "genre": ["Biography", "Poetry"]
+  },
+  {
+    "title": "Книга 9",
+    "authors": [],
+    "pages": 300,
+    "language": "Русский",
+    "genre": ["HistoricalFiction", "Children"]
+  },
+  {
+    "title": "Книга 10",
+    "authors": ["Автор 9"],
+    "pages": 170,
+    "language": "Русский",
+    "genre": ["Young"]
+  },
+  {
+    "title": "Книга 11",
+    "authors": [],
+    "pages": 180,
+    "language": "Русский",
+    "genre": []
+  },
+  {
+    "title": "Книга 12",
+    "authors": ["Автор 10", "Автор 11"],
+    "pages": 220,
+    "language": "Русский",
+    "genre": ["Business", "Science"]
+  },
+  {
+    "title": "Книга 13",
+    "authors": ["Автор 12"],
+    "pages": 160,
+    "language": "",
+    "genre": ["Travel"]
+  },
+  {
+    "title": "Книга 14",
+    "authors": ["Автор 13"],
+    "pages": 190,
+    "language": "Русский",
+    "genre": ["Cookbooks", "Philosophy"]
+  },
+  {
+    "title": "",
+    "authors": [],
+    "pages": 210,
+    "language": "Русский",
+    "genre": ["Other"]
+  }
+]
