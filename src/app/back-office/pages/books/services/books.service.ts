@@ -17,9 +17,7 @@ export class BooksService {
   get loadingState$() {
     return this._loadingState$.asObservable();
   }
-  constructor(private booksApiService: BooksApiService) {
-    console.log(new Date());
-  }
+  constructor(private booksApiService: BooksApiService) {}
 
   getBooks() {
     this._loadingState$.next(LoadingState.Loading);

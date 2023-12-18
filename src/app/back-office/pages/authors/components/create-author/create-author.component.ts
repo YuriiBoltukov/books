@@ -1,36 +1,30 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicModule, ModalController } from '@ionic/angular';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import { GENRE_DICTIONARY } from '../../../../../shared/constants/genre.dictionary';
-import { AsyncPipe, KeyValuePipe } from '@angular/common';
-import { LANGUAGE_DICTIONARY } from '../../../../../shared/constants/language.dictionary';
 import { AuthorsApiService } from '../../../../../shared/api/authors-api.service';
 import { Observable, shareReplay, Subject, takeUntil } from 'rxjs';
 import { Author } from '../../../../../shared/models/author.model';
+import {
+  FormGroup,
+  ReactiveFormsModule,
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
+import { AsyncPipe, KeyValuePipe } from '@angular/common';
 
 @Component({
   standalone: true,
-  selector: 'app-create-book',
-  templateUrl: './create-book.component.html',
-  styleUrls: ['./create-book.component.scss'],
+  selector: 'app-create-author',
+  templateUrl: './create-author.component.html',
+  styleUrls: ['./create-author.component.scss'],
   imports: [IonicModule, ReactiveFormsModule, KeyValuePipe, AsyncPipe],
 })
-export class CreateBookComponent implements OnInit, OnDestroy {
+export class CreateAuthorComponent implements OnInit {
   form!: FormGroup;
 
   authors$!: Observable<Author[]>;
 
   _unSubscribe$: Subject<void> = new Subject<void>();
 
-  dictionaries = {
-    GENRE_DICTIONARY,
-    LANGUAGE_DICTIONARY,
-  };
   constructor(
     private modalCtrl: ModalController,
     private formBuilder: FormBuilder,
@@ -40,14 +34,7 @@ export class CreateBookComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       name: [null, [Validators.required]],
-      author: [null, [Validators.required]],
-      description: [null, [Validators.required, Validators.minLength(100)]],
-      pages: [null, [Validators.required]],
-      language: [null, [Validators.required]],
-      genre: [null, [Validators.required]],
     });
-
-    this.form.valueChanges.subscribe((v) => console.log(v));
 
     this.authors$ = this.authorsApiService
       .getAuthors()

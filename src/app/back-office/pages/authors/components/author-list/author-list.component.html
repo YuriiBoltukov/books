@@ -1,0 +1,17 @@
+@switch (authorsService.loadingState$ | async) {
+  @case (loadingStateEnum.Success) {
+    <ion-list [inset]="true">
+      @for (author of authorsService.authors$ | async; track author.id) {
+        <app-author-item [author]="author"></app-author-item>
+      } @empty {
+        Список пока пустой
+      }
+    </ion-list>
+  }
+  @case (loadingStateEnum.Error) {
+    Во время загрузки данных произошла ошибка
+  }
+  @default {
+    крутится скелетон...
+  }
+}

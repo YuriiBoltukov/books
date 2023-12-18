@@ -26,8 +26,8 @@ const routes: Routes = [
           title: 'Авторы',
         },
         loadComponent: () =>
-          import('./pages/author-list/author-list.component').then(
-            (m) => m.AuthorListComponent,
+          import('./pages/authors/authors.component').then(
+            (m) => m.AuthorsComponent,
           ),
       },
     ],
