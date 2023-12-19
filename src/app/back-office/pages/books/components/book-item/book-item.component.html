@@ -1,4 +1,9 @@
-<ion-item button detail="true" detail-icon="caret-forward-outline">
+<ion-item
+  button
+  detail="true"
+  detail-icon="caret-forward-outline"
+  (click)="openDetailModal()"
+>
   <div class="ion-padding-vertical">
     <ion-label class="ion-padding-bottom">
       <ion-text>{{ book.title || 'Без названия' }}</ion-text>

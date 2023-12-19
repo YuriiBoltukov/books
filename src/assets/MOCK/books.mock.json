@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "title": "Книга 1",
     "authors": ["Автор 1"],
     "pages": 100,
@@ -7,6 +8,7 @@
     "genres": ["Fiction"]
   },
   {
+    "id": "11",
     "title": "Книга 2",
     "authors": ["Автор 2", "Автор 3"],
     "pages": 150,
@@ -14,6 +16,7 @@
     "genres": ["Mystery"]
   },
   {
+    "id": "12",
     "title": "Книга 3",
     "authors": ["Автор 4"],
     "pages": 200,
@@ -21,6 +24,7 @@
     "genres": ["Fantasy", "ScienceFiction"]
   },
   {
+    "id": "13",
     "title": "Книга 4",
     "authors": [],
     "pages": 120,
@@ -28,6 +32,7 @@
     "genres": []
   },
   {
+    "id": "14",
     "title": "Книга 5",
     "authors": ["Автор 5", "Автор 6"],
     "pages": 180,
@@ -35,6 +40,7 @@
     "genres": ["Romance"]
   },
   {
+    "id": "15",
     "title": "Книга 6",
     "authors": ["Автор 7"],
     "pages": null,
@@ -42,6 +48,7 @@
     "genres": ["Horror"]
   },
   {
+    "id": "16",
     "title": "Книга 7",
     "authors": ["Автор 8"],
     "pages": 250,
@@ -49,6 +56,7 @@
     "genres": ["NonFiction"]
   },
   {
+    "id": "17",
     "title": "Книга 8",
     "authors": ["Автор 8"],
     "pages": 0,
@@ -56,6 +64,7 @@
     "genres": ["Biography", "Poetry"]
   },
   {
+    "id": "18",
     "title": "Книга 9",
     "authors": [],
     "pages": 300,
@@ -63,6 +72,7 @@
     "genres": ["HistoricalFiction", "Children"]
   },
   {
+    "id": "19",
     "title": "Книга 10",
     "authors": ["Автор 9"],
     "pages": 170,
@@ -70,6 +80,7 @@
     "genres": ["Young"]
   },
   {
+    "id": "121",
     "title": "Книга 11",
     "authors": [],
     "pages": 180,
@@ -77,6 +88,7 @@
     "genres": []
   },
   {
+    "id": "122",
     "title": "Книга 12",
     "authors": ["Автор 10", "Автор 11"],
     "pages": 220,
@@ -84,6 +96,7 @@
     "genres": ["Business", "Science"]
   },
   {
+    "id": "123",
     "title": "Книга 13",
     "authors": ["Автор 12"],
     "pages": 160,
@@ -91,6 +104,7 @@
     "genres": ["Travel"]
   },
   {
+    "id": "124",
     "title": "Книга 14",
     "authors": ["Автор 13"],
     "pages": 190,
@@ -98,6 +112,7 @@
     "genres": ["Cookbooks", "Philosophy"]
   },
   {
+    "id": "125",
     "title": "",
     "authors": [],
     "pages": 210,

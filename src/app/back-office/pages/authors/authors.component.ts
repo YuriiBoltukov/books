@@ -13,7 +13,7 @@ import { AuthorListComponent } from './components/author-list/author-list.compon
   imports: [IonicModule, AsyncPipe, AuthorListComponent],
   providers: [AuthorsApiService],
 })
-export class AuthorsComponent implements OnInit{
+export class AuthorsComponent implements OnInit {
   constructor(
     public AuthorsApiService: AuthorsApiService,
     private modalCtrl: ModalController,

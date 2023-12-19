@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="close()">Close</ion-button>
+    </ion-buttons>
+    <ion-title>{{ (bookDetailService.book$ | async)?.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  @switch (bookDetailService.loadingState$ | async) {
+    @case (loadingStateEnum.Success) {
+      @if (bookDetailService.book$ | async; as book) {
+        <div>
+          <h4>Название книги: {{ book.title }}</h4>
+          <p>Автор: {{ book.authors | arrayToString }}</p>
+          <p>Страниц: {{ book.pages }}</p>
+          <p>Язык: {{ book.language }}</p>
+          <p>
+            Жанры: {{ book.genres | translate: dictionary | arrayToString }}
+          </p>
+          <p>
+            Описание:<br />
+            {{ book.description }}
+          </p>
+        </div>
+      }
+    }
+    @case (loadingStateEnum.Error) {
+      Во время загрузки данных произошла ошибка
+    }
+    @default {
+      <ion-item>
+        <ion-label>
+          <h4>
+            <ion-skeleton-text
+              [animated]="true"
+              style="width: 80%"
+            ></ion-skeleton-text>
+          </h4>
+          <p>
+            <ion-skeleton-text
+              [animated]="true"
+              style="width: 60%"
+            ></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text
+              [animated]="true"
+              style="width: 30%"
+            ></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text
+              [animated]="true"
+              style="width: 30%"
+            ></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text
+              [animated]="true"
+              style="width: 30%"
+            ></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text
+              [animated]="true"
+              style="width: 30%"
+            ></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    }
+  }
+</ion-content>
