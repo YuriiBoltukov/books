@@ -1,9 +1,12 @@
 @if (author.name) {
-  <ion-item>
+  <ion-item >
     <div class="ion-padding-vertical">
       <ion-label>
         <ion-text>{{ author.name }}</ion-text>
       </ion-label>
     </div>
+    <ion-button (click)="editAuthor(author)" slot="end" color="contrast">
+      <ion-icon slot="icon-only" color="medium" name="create-outline"></ion-icon>
+    </ion-button>
   </ion-item>
 }

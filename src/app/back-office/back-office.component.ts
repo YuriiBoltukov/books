@@ -18,6 +18,7 @@ import { AsyncPipe } from '@angular/common';
 })
 export class BackOfficeComponent implements OnInit {
   public title$!: Observable<string>;
+
   private router = inject(Router);
 
   ngOnInit() {

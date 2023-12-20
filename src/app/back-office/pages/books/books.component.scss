@@ -1,6 +1,18 @@
 .container {
   position: relative;
 }
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ion-item {
+  width: 50px;
+  margin-right: 20px;
+}
+
 ion-fab {
   position: fixed;
 }

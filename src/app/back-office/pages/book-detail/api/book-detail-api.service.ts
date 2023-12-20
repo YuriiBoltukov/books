@@ -9,6 +9,7 @@ import { BookDetail } from '../models/book-detail.model';
 })
 export class BookDetailApiService extends ApiBase {
   private bookUrl = 'assets/MOCK/book.mock.json';
+
   constructor(private http: HttpClient) {
     super();
   }

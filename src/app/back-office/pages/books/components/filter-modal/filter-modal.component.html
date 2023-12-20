@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Filter</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-list lines="full">
+      <ion-item class="ion-no-padding">
+        <div>
+          <ion-select
+            formControlName="author"
+            label="Автор"
+            label-placement="floating"
+            [multiple]="true"
+          >
+            @for (author of authors$ | async; track author.id) {
+              <ion-select-option [value]="author.id">{{
+                author.name
+              }}</ion-select-option>
+            }
+          </ion-select>
+        </div>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <div>
+          <ion-select
+            formControlName="language"
+            label="Язык"
+            label-placement="floating"
+          >
+            @for (
+              item of dictionaries.LANGUAGE_DICTIONARY | keyvalue;
+              track item.key
+            ) {
+              <ion-select-option [value]="item.key">{{
+                item.value
+              }}</ion-select-option>
+            }
+          </ion-select>
+        </div>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <div>
+          <label class="label">Страницы:</label>
+          <div class="pages-input">
+            <ion-input
+              formControlName="pagesFrom"
+              label="От"
+              label-placement="floating"
+              fill="outline"
+              type="number"
+            ></ion-input>
+
+            <ion-input
+              formControlName="pagesTo"
+              label="До"
+              label-placement="floating"
+              fill="outline"
+              type="number"
+            ></ion-input>
+          </div>
+          @if (
+            (form.get('pagesFrom')!.invalid && form.get('pagesFrom')!.dirty) ||
+            (form.get('pagesTo')!.invalid && form.get('pagesTo')!.dirty)
+          ) {
+            <div class="ion-padding-bottom">
+              <ion-note color="danger"
+                >Количество страниц не может быть отрицательным</ion-note
+              >
+            </div>
+          }
+        </div>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <div>
+          <ion-select
+            formControlName="genre"
+            label="Жанр"
+            label-placement="floating"
+            [multiple]="true"
+          >
+            @for (
+              item of dictionaries.GENRE_DICTIONARY | keyvalue;
+              track item.key
+            ) {
+              <ion-select-option [value]="item.key">{{
+                item.value
+              }}</ion-select-option>
+            }
+          </ion-select>
+        </div>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

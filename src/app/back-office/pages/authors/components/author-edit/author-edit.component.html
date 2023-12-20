@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Редактирование автора</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="save()" [strong]="true">Save</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item class="ion-no-padding">
+        <ion-input
+          formControlName="name"
+          label="Имя автора"
+          labelPlacement="floating"
+        ></ion-input>
+        @if (form.get('name')!.invalid && form.get('name')!.dirty) {
+          <div class="ion-padding-bottom">
+            <ion-note color="danger">Поле обязательно для заполнения</ion-note>
+          </div>
+        }
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

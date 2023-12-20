@@ -4,6 +4,7 @@ import { ToastController } from '@ionic/angular';
 
 export class ApiBase {
   private toastController: ToastController = inject(ToastController);
+
   handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       this.showError(error.message);

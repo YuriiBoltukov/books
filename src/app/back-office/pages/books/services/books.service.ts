@@ -7,6 +7,7 @@ import { BooksApiService } from '../api/books-api.service';
 @Injectable()
 export class BooksService {
   private _books$: BehaviorSubject<Book[]> = new BehaviorSubject<Book[]>([]);
+
   private _loadingState$: BehaviorSubject<LoadingState> =
     new BehaviorSubject<LoadingState>(LoadingState.None);
 
@@ -17,6 +18,7 @@ export class BooksService {
   get loadingState$() {
     return this._loadingState$.asObservable();
   }
+
   constructor(private booksApiService: BooksApiService) {}
 
   getBooks() {

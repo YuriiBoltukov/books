@@ -15,12 +15,12 @@ import { Author } from '../../../../../shared/models/author.model';
 
 @Component({
   standalone: true,
-  selector: 'app-create-book',
-  templateUrl: './create-book.component.html',
-  styleUrls: ['./create-book.component.scss'],
+  selector: 'app-book-create',
+  templateUrl: './book-create.component.html',
+  styleUrls: ['./book-create.component.scss'],
   imports: [IonicModule, ReactiveFormsModule, KeyValuePipe, AsyncPipe],
 })
-export class CreateBookComponent implements OnInit, OnDestroy {
+export class BookCreateComponent implements OnInit, OnDestroy {
   form!: FormGroup;
 
   authors$!: Observable<Author[]>;

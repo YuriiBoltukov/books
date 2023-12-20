@@ -9,6 +9,7 @@ import { ApiBase } from '../base-classes/api.base';
 })
 export class AuthorsApiService extends ApiBase {
   private authorsUrl = 'assets/MOCK/authors.mock.json';
+
   constructor(private http: HttpClient) {
     super();
   }
