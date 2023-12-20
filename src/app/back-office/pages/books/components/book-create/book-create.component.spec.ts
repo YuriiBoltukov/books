@@ -1,16 +1,25 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
-
+import { IonicModule, ModalController } from '@ionic/angular';
 import { BookCreateComponent } from './book-create.component';
+import { FormBuilder } from '@angular/forms';
+import { AuthorsApiService } from '../../../../../shared/api/authors-api.service';
+import { of } from 'rxjs';
 
-describe('CreateBookComponent', () => {
+describe('BookCreateComponent', () => {
   let component: BookCreateComponent;
   let fixture: ComponentFixture<BookCreateComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [BookCreateComponent],
       imports: [IonicModule.forRoot()],
+      providers: [
+        ModalController,
+        FormBuilder,
+        {
+          provide: AuthorsApiService,
+          useValue: { getAuthors: () => of(null) },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(BookCreateComponent);

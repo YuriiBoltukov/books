@@ -5,19 +5,19 @@ import {
   FormGroup,
   ReactiveFormsModule,
   Validators,
-}                                                      from '@angular/forms';
-import { GENRE_DICTIONARY }                            from '../../../../../shared/constants/genre.dictionary';
-import { LANGUAGE_DICTIONARY }                         from '../../../../../shared/constants/language.dictionary';
+} from '@angular/forms';
+import { GENRE_DICTIONARY } from '../../../../../shared/constants/genre.dictionary';
+import { LANGUAGE_DICTIONARY } from '../../../../../shared/constants/language.dictionary';
 import { Observable, shareReplay, Subject, takeUntil } from 'rxjs';
-import { Author }                                      from '../../../../../shared/models/author.model';
-import { AuthorsApiService }                           from '../../../../../shared/api/authors-api.service';
-import { AsyncPipe, KeyValuePipe }                     from '@angular/common';
+import { Author } from '../../../../../shared/models/author.model';
+import { AuthorsApiService } from '../../../../../shared/api/authors-api.service';
+import { AsyncPipe, KeyValuePipe } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-filter-modal',
   templateUrl: './filter-modal.component.html',
-  styleUrls: [ './filter-modal.component.scss'],
+  styleUrls: ['./filter-modal.component.scss'],
   imports: [IonicModule, ReactiveFormsModule, KeyValuePipe, AsyncPipe],
 })
 export class FilterModalComponent implements OnInit, OnDestroy {

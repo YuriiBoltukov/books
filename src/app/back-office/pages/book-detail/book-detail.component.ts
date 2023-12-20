@@ -38,7 +38,6 @@ export class BookDetailComponent implements OnInit {
 
   ngOnInit() {
     this.bookDetailService.getBookById(this.bookId);
-    this.bookDetailService.book$.subscribe((v) => console.log(v));
   }
 
   close() {

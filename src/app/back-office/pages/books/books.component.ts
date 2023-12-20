@@ -4,8 +4,8 @@ import { AsyncPipe } from '@angular/common';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BooksService } from './services/books.service';
 import { BooksApiService } from './api/books-api.service';
-import { BookCreateComponent }  from './components/book-create/book-create.component';
-import { SearchComponent }      from './components/search/search.component';
+import { BookCreateComponent } from './components/book-create/book-create.component';
+import { SearchComponent } from './components/search/search.component';
 import { FilterModalComponent } from './components/filter-modal/filter-modal.component';
 
 @Component({
@@ -13,7 +13,7 @@ import { FilterModalComponent } from './components/filter-modal/filter-modal.com
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.scss'],
-  imports: [ IonicModule, AsyncPipe, BookListComponent, SearchComponent],
+  imports: [IonicModule, AsyncPipe, BookListComponent, SearchComponent],
   providers: [BooksService, BooksApiService, BookCreateComponent],
 })
 export class BooksComponent {

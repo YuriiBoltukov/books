@@ -11,8 +11,10 @@ export class AuthorsService {
   private _authors$: BehaviorSubject<Author[]> = new BehaviorSubject<Author[]>(
     [],
   );
+
   private _loadingState$: BehaviorSubject<LoadingState> =
     new BehaviorSubject<LoadingState>(LoadingState.None);
+
   get authors$() {
     return this._authors$.asObservable();
   }
@@ -20,6 +22,7 @@ export class AuthorsService {
   get loadingState$() {
     return this._loadingState$.asObservable();
   }
+
   constructor(private authorsApiService: AuthorsApiService) {}
 
   getAuthors() {
