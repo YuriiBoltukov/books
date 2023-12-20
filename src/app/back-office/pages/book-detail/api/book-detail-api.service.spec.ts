@@ -15,4 +15,12 @@ describe('BookDetailApiService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+  it('should fetch a book by id', (done) => {
+    const bookId = "1";
+
+    service.getBookById(bookId).subscribe((result) => {
+      expect(result).toBeTruthy();
+      done();
+    });
+  });
 });

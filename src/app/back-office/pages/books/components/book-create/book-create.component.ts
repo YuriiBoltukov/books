@@ -32,7 +32,7 @@ export class BookCreateComponent implements OnInit, OnDestroy {
     LANGUAGE_DICTIONARY,
   };
   constructor(
-    private modalCtrl: ModalController,
+    public modalCtrl: ModalController,
     private formBuilder: FormBuilder,
     private authorsApiService: AuthorsApiService,
   ) {}
